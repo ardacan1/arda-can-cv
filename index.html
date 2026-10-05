@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Arda Can Emeksizoğlu — CV</title>
+  <meta name="description" content="Arda Can Emeksizoğlu. İstanbul Aydın Üniversitesi Yazılım Mühendisliği 2. sınıf öğrencisi. Özgeçmiş, eğitim, deneyim ve yetkinlikler." />
+  <meta name="theme-color" content="#F6F5F2" />
+  <meta property="og:title" content="Arda Can Emeksizoğlu — CV" />
+  <meta property="og:description" content="Yazılım Mühendisliği öğrencisi · İstanbul" />
+  <meta property="og:image" content="/assets/arda.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2318181B'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23fff'%3EAC%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#lobi">İçeriğe geç</a>
+
+  <!-- Asansör kapısı intro -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__door intro__door--l"></div>
+    <div class="intro__door intro__door--r"></div>
+    <div class="intro__panel">
+      <span class="intro__arrow">▲</span>
+      <span class="intro__floor">-3</span>
+    </div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"></div>
+
+  <div class="blobs" aria-hidden="true">
+    <span class="blob blob--a"></span>
+    <span class="blob blob--b"></span>
+    <span class="blob blob--c"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#lobi" class="nav__logo" aria-label="Başa dön">AC<span>.</span></a>
+    <nav aria-label="Ana menü">
+      <ul class="nav__links">
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#egitim">Eğitim</a></li>
+        <li><a href="#deneyim">Deneyim</a></li>
+        <li><a href="#yetkinlikler">Yetkinlikler</a></li>
+      </ul>
+    </nav>
+    <a href="#iletisim" class="btn btn--dark nav__cta magnetic">İletişim</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menüyü aç">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobil menü -->
+  <div class="mmenu" id="mobile-menu" hidden>
+    <nav aria-label="Mobil menü">
+      <ol class="mmenu__list">
+        <li><a href="#lobi"><span class="mmenu__no">00</span>Lobi</a></li>
+        <li><a href="#profil"><span class="mmenu__no">01</span>Profil</a></li>
+        <li><a href="#egitim"><span class="mmenu__no">02</span>Eğitim</a></li>
+        <li><a href="#deneyim"><span class="mmenu__no">03</span>Deneyim</a></li>
+        <li><a href="#yetkinlikler"><span class="mmenu__no">04</span>Yetkinlikler</a></li>
+        <li><a href="#iletisim"><span class="mmenu__no">05</span>İletişim</a></li>
+      </ol>
+    </nav>
+    <a class="mmenu__mail" href="mailto:ardacanemeksizoglu658@gmail.com">ardacanemeksizoglu658@gmail.com</a>
+  </div>
+
+  <!-- Kat göstergesi -->
+  <aside class="floor" aria-hidden="true">
+    <span class="floor__label">KAT</span>
+    <span class="floor__num"><span class="floor__val">0</span></span>
+    <span class="floor__name">Lobi</span>
+    <ol class="floor__dots">
+      <li data-i="0"></li><li data-i="1"></li><li data-i="2"></li><li data-i="3"></li><li data-i="4"></li><li data-i="5"></li>
+    </ol>
+  </aside>
+
+  <main>
+    <!-- KAT 0 — LOBİ -->
+    <section id="lobi" class="hero" data-floor="0" data-floor-name="Lobi">
+      <div class="hero__text">
+        <p class="eyebrow hero__eyebrow"><span class="dot"></span> İstanbul · Yazılım Mühendisliği Öğrencisi</p>
+        <h1 class="hero__title">
+          <span class="line"><span class="split"><em class="hero__name">Arda&nbsp;Can</em></span></span>
+          <span class="line"><span class="split">Emeksizoğlu</span></span>
+        </h1>
+        <p class="hero__lead">
+          <strong>İstanbul Aydın Üniversitesi</strong> Yazılım Mühendisliği 2. sınıf öğrencisiyim.
+          Öğrenmeye açık, yüksek enerjili ve iletişimi güçlü biriyim.
+        </p>
+        <div class="hero__ctas">
+          <a href="mailto:ardacanemeksizoglu658@gmail.com" class="btn btn--dark magnetic">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Bana ulaş
+          </a>
+          <a href="#profil" class="btn btn--ghost magnetic">CV'mi incele</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="photo tilt">
+          <div class="photo__frame">
+            <img src="assets/arda.jpg" alt="Arda Can Emeksizoğlu, asansörde ayna selfiesi; beyaz triko polo ve haki pantolon" width="1125" height="2000" fetchpriority="high" />
+            <div class="photo__shine"></div>
+          </div>
+          <span class="chip chip--1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z M6 12v5c3 2 9 2 12 0v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg> İAÜ · Yazılım Müh.</span>
+          <span class="chip chip--2"><b>EN</b> B1</span>
+          <span class="chip chip--3"><span class="pulse"></span> Yeni fırsatlara açık</span>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>kaydır</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Etkili iletişim</span><i>✦</i><span>Takım çalışması</span><i>✦</i><span>Müşteri odaklılık</span><i>✦</i><span>Organizasyon</span><i>✦</i><span>Yazılım Mühendisliği</span><i>✦</i><span>Yüksek enerji</span><i>✦</i>
+        <span>Etkili iletişim</span><i>✦</i><span>Takım çalışması</span><i>✦</i><span>Müşteri odaklılık</span><i>✦</i><span>Organizasyon</span><i>✦</i><span>Yazılım Mühendisliği</span><i>✦</i><span>Yüksek enerji</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- KAT 1 — PROFİL -->
+    <section id="profil" class="section" data-floor="1" data-floor-name="Profil">
+      <header class="section__head">
+        <p class="eyebrow"><span class="floor-tag">01</span> Profil</p>
+        <h2 class="section__title split-words">Ben kimim?</h2>
+      </header>
+
+      <div class="bento">
+        <article class="card card--about reveal">
+          <p class="big">
+            İstanbul'da yaşayan, <span class="hl">yazılım mühendisliği</span> eğitimi alan, öğrenmeye açık ve yüksek enerjili biriyim.
+          </p>
+          <p class="muted">
+            Dinamik tempoya ve esnek çalışma saatlerine kolayca uyum sağlıyorum. Müşteri odaklı çalışmalarda deneyim kazanmayı
+            hedefliyor, güçlü iletişim becerilerimle takım çalışmasına ve ortak hedeflere aktif katkı sunmak istiyorum.
+          </p>
+        </article>
+
+        <article class="card card--stat card--s1 reveal">
+          <span class="stat"><span class="count" id="age" data-to="19">19</span></span>
+          <span class="stat__label">yaşında</span>
+        </article>
+
+        <article class="card card--stat card--s2 card--accent reveal">
+          <span class="stat"><span class="count" data-to="2">2</span>.</span>
+          <span class="stat__label">sınıf, Yazılım Mühendisliği</span>
+        </article>
+
+        <article class="card card--clock reveal">
+          <div class="card__top">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Beylikdüzü, İstanbul
+          </div>
+          <span class="clock" id="clock">--:--</span>
+          <span class="muted small">İstanbul'da şu anki saat</span>
+        </article>
+
+        <article class="card card--uni reveal">
+          <div class="card__top">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            Okul yolculuğu
+          </div>
+          <h3>İstanbul Aydın Üniversitesi</h3>
+          <ol class="steps" aria-label="Eğitim ilerlemesi">
+            <li class="is-done"><span></span>Hazırlık</li>
+            <li class="is-done"><span></span>1. sınıf</li>
+            <li class="is-now"><span></span>2. sınıf</li>
+            <li><span></span>3. sınıf</li>
+            <li><span></span>4. sınıf</li>
+          </ol>
+        </article>
+
+        <article class="card card--clubs reveal">
+          <span class="stat"><span class="count" data-to="2">2</span></span>
+          <span class="stat__label">öğrenci kulübünde aktif görev</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- KAT 2 — EĞİTİM -->
+    <section id="egitim" class="section" data-floor="2" data-floor-name="Eğitim">
+      <header class="section__head">
+        <p class="eyebrow"><span class="floor-tag">02</span> Eğitim</p>
+        <h2 class="section__title split-words">Eğitim.</h2>
+      </header>
+
+      <div class="edu">
+        <article class="edu__card edu__card--now reveal">
+          <div class="edu__top">
+            <span class="badge badge--live"><span class="pulse"></span> Devam ediyor</span>
+            <span class="edu__date">Eyl 2025 — Günümüz</span>
+          </div>
+          <h3>Yazılım Mühendisliği</h3>
+          <p class="edu__school">İstanbul Aydın Üniversitesi</p>
+          <p class="muted">Lisans programı · şu an 2. sınıf</p>
+          <svg class="edu__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M13.5 6l-3 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </article>
+
+        <article class="edu__card reveal">
+          <div class="edu__top">
+            <span class="badge">Tamamlandı</span>
+            <span class="edu__date">Eyl 2024 — Haz 2025</span>
+          </div>
+          <h3>İngilizce Hazırlık</h3>
+          <p class="edu__school">İstanbul Aydın Üniversitesi</p>
+          <p class="muted">Yabancı dil hazırlık programı</p>
+          <svg class="edu__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h8M9 5v3c0 4-2 7-5 9M7 12c1 2 3 4 6 5M13 21l4-9 4 9M14.5 18h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </article>
+      </div>
+    </section>
+
+    <!-- KAT 3 — DENEYİM -->
+    <section id="deneyim" class="section" data-floor="3" data-floor-name="Deneyim">
+      <header class="section__head">
+        <p class="eyebrow"><span class="floor-tag">03</span> Deneyim</p>
+        <h2 class="section__title split-words">Sosyal faaliyetler.</h2>
+        <p class="section__sub">Kulüp çalışmalarında organizasyon, koordinasyon ve iletişim.</p>
+      </header>
+
+      <ol class="timeline">
+        <span class="timeline__line" aria-hidden="true"><span></span></span>
+        <li class="tl reveal">
+          <span class="tl__year">2026</span>
+          <div class="tl__card tl__card--now">
+            <div class="tl__meta">
+              <span class="badge badge--live"><span class="pulse"></span> Devam ediyor</span>
+              <span class="edu__date">Eyl 2026 — Günümüz</span>
+            </div>
+            <h3>Etkinlik ve Organizasyon Görevlisi</h3>
+            <p class="tl__org">Yazılım Kulübü · İstanbul Aydın Üniversitesi</p>
+            <p>Kendi alanımla ilgili bu kulüpte sosyal yetkinliklerimle çalışmalara destek olurken, güçlü insan ilişkileri kurarak iletişim ağımı genişletme tecrübesi edindim.</p>
+          </div>
+        </li>
+        <li class="tl reveal">
+          <span class="tl__year">2024</span>
+          <div class="tl__card">
+            <div class="tl__meta">
+              <span class="badge">Tamamlandı</span>
+              <span class="edu__date">Kas 2024 — Eyl 2026</span>
+            </div>
+            <h3>Başkan Yardımcısı</h3>
+            <p class="tl__org">Deneyim ve Kültür Kulübü · İstanbul Aydın Üniversitesi</p>
+            <p>Kulüp etkinliklerinin planlama süreçlerinde aktif rol alarak organizasyon ve koordinasyon becerilerimi geliştirdim; takım çalışması ve insan ilişkileri konusunda pratik deneyim kazandım.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- KAT 4 — YETKİNLİKLER -->
+    <section id="yetkinlikler" class="section" data-floor="4" data-floor-name="Yetkinlik">
+      <header class="section__head">
+        <p class="eyebrow"><span class="floor-tag">04</span> Yetkinlikler</p>
+        <h2 class="section__title split-words">Güçlü yanlarım.</h2>
+      </header>
+
+      <div class="abilities">
+        <article class="ability reveal">
+          <span class="ability__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1-4.6A8 8 0 1 1 21 12Z M8.5 12h.01M12 12h.01M15.5 12h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Müşteri Odaklılık ve Etkili İletişim</h3>
+        </article>
+        <article class="ability reveal">
+          <span class="ability__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 9v4l2.5 2.5M9 2h6M12 2v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Dinamik Tempoya ve Esnek Saatlere Uyum</h3>
+        </article>
+        <article class="ability reveal">
+          <span class="ability__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3>Takım Çalışması ve Koordinasyon</h3>
+        </article>
+        <article class="ability reveal">
+          <span class="ability__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <h3>Yüksek Enerji ve Pozitif İletişim</h3>
+        </article>
+      </div>
+
+      <div class="langs reveal">
+        <h3 class="langs__title">Diller</h3>
+        <div class="lang">
+          <div class="lang__head"><strong>Türkçe</strong><span class="muted">Ana dil</span></div>
+          <ol class="cefr" aria-label="Türkçe seviyesi: ana dil">
+            <li class="on">A1</li><li class="on">A2</li><li class="on">B1</li><li class="on">B2</li><li class="on">C1</li><li class="on">C2</li>
+          </ol>
+        </div>
+        <div class="lang">
+          <div class="lang__head"><strong>İngilizce</strong><span class="muted">B1 · Orta seviye</span></div>
+          <ol class="cefr" aria-label="İngilizce seviyesi: B1">
+            <li class="on">A1</li><li class="on">A2</li><li class="on">B1</li><li>B2</li><li>C1</li><li>C2</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- KAT 5 — İLETİŞİM -->
+    <section id="iletisim" class="contact" data-floor="5" data-floor-name="İletişim">
+      <p class="eyebrow"><span class="floor-tag">05</span> Çatı katı · İletişim</p>
+      <h2 class="contact__title">
+        <span class="line"><span class="split">Birlikte</span></span>
+        <span class="line"><span class="split"><em>çalışalım.</em></span></span>
+      </h2>
+      <p class="contact__lead">Staj, yarı zamanlı iş ya da bir proje için bana e-posta ile ulaşabilirsin.</p>
+      <div class="socials">
+        <a class="social social--primary magnetic" href="mailto:ardacanemeksizoglu658@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          ardacanemeksizoglu658@gmail.com
+        </a>
+        <button class="social copy magnetic" type="button" data-copy="ardacanemeksizoglu658@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="copy__label">Adresi kopyala</span>
+        </button>
+      </div>
+      <p class="contact__loc">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        Beylikdüzü, İstanbul
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Arda Can Emeksizoğlu</span>
+    <a href="#lobi" class="footer__top magnetic" aria-label="Lobiye dön">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Başa dön
+    </a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
