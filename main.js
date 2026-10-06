@@ -46,6 +46,81 @@
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
   window.matchMedia("(min-width: 761px)").addEventListener("change", e => e.matches && closeMenu());
 
+  // Laptop: kendini yazan Java kodu ve "Çalıştır" düğmesi
+  const codeEl = $("#code");
+  if (codeEl) {
+    const KAYNAK = [
+      "/**",
+      " * Arda Can Emeksizoğlu · Yazılım Mühendisliği",
+      " */",
+      "public class Arda {",
+      '  private final String ad = "Arda";',
+      '  private final String okul = "İstanbul Aydın Üniversitesi";',
+      "  private final int sinif = 2;",
+      "",
+      "  private String selamla() {",
+      '    return "Merhaba, ben " + ad + "!";',
+      "  }",
+      "",
+      "  private String karsila() {",
+      '    return "Sayfama hoş geldiniz!";',
+      "  }",
+      "",
+      "  public static void main(String[] args) {",
+      "    Arda arda = new Arda();",
+      "    System.out.println(arda.selamla());",
+      "    System.out.println(arda.karsila());",
+      "  }",
+      "}",
+    ].join("\n");
+    const CIKTI = ["Merhaba, ben Arda!", "Sayfama hoş geldiniz!"];
+    const TOKEN = /(\/\*[\s\S]*?(?:\*\/|$))|("[^"\n]*"?)|\b(import|public|private|final|class|static|void|int|return|new)\b|\b(String|System|List|Arda)\b|\b(\d+)\b|\b(\w+)(?=\()/g;
+    const renklendir = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(TOKEN, (m, yorum, str, kw, tip, sayi, fn) =>
+      `<span class="tok-${yorum ? "com" : str ? "str" : kw ? "kw" : tip ? "type" : sayi ? "num" : "fn"}">${m}</span>`);
+
+    $(".code__ghost").innerHTML = renklendir(KAYNAK); // yer tutucu: yazarken sayfa kaymasın
+    let i = 0, basladi = false, bitti = false;
+    const editor = $(".code__editor"), caret = $(".code__caret");
+    const ciz = () => {
+      codeEl.innerHTML = renklendir(KAYNAK.slice(0, i));
+      // ekran küçükse (telefon) editör, gerçek bir editör gibi imleci takip ederek aşağı kayar
+      editor.scrollTop = Math.max(0, caret.offsetTop + caret.offsetHeight * 2 - editor.clientHeight);
+    };
+    const tamamla = () => { bitti = true; i = KAYNAK.length; ciz(); };
+    const adim = () => {
+      if (bitti) return;
+      for (let k = 0; k < 3; k++) { // her adımda birkaç harf; girintiyi tek seferde geç
+        while (KAYNAK[i] === " ") i++;
+        i++;
+      }
+      if (i >= KAYNAK.length) return tamamla();
+      ciz();
+      setTimeout(adim, KAYNAK[i - 1] === "\n" ? 70 : 18);
+    };
+    const basla = () => { if (!basladi) { basladi = true; adim(); } };
+
+    if (reduce || !("IntersectionObserver" in window)) tamamla();
+    else new IntersectionObserver((girdiler, gozcu) => {
+      if (girdiler[0].isIntersecting) { basla(); gozcu.disconnect(); }
+    }, { threshold: .35 }).observe($(".laptop"));
+
+    const term = $("#term"), runBtn = $(".code__run");
+    const calistir = () => {
+      if (runBtn.disabled) return;
+      tamamla();
+      runBtn.disabled = true;
+      term.innerHTML = '<div><span class="p">$</span> java Arda.java</div>';
+      CIKTI.forEach((satir, n) => setTimeout(() => {
+        const d = document.createElement("div");
+        d.textContent = satir;
+        term.append(d);
+        if (n === CIKTI.length - 1) { runBtn.disabled = false; runBtn.textContent = "Tekrar çalıştır ↻"; }
+      }, reduce ? 0 : 450 * (n + 1)));
+    };
+    runBtn.addEventListener("click", calistir);
+    term.addEventListener("click", calistir); // küçük ekranda terminale dokunmak da çalıştırır
+  }
+
   if (!hasGsap) {
     $(".intro")?.remove();
     $$("#mobile-menu a").forEach(a => a.addEventListener("click", closeMenu));

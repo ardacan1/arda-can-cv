@@ -375,6 +375,68 @@ main { position: relative; }
 .edu__card:hover .edu__icon { transform: rotate(-8deg) scale(1.08); opacity: .14; }
 @media (max-width: 860px) { .edu { grid-template-columns: 1fr; } .edu__card { min-height: 230px; } }
 
+/* ---------- Laptop (kendini yazan kod) ---------- */
+.laptop { grid-column: 1 / -1; display: grid; justify-items: center; padding: clamp(20px, 4vw, 48px) 0 8px; perspective: 1600px; }
+.laptop__lid {
+  width: min(760px, 100%); padding: clamp(8px, 1.4vw, 14px);
+  background: linear-gradient(160deg, #2a2d34, #0f1115); border-radius: 22px 22px 8px 8px;
+  box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(255, 255, 255, .08);
+  transform: rotateX(var(--rx, 6deg)) rotateY(var(--ry, -8deg)); transform-origin: 50% 100%;
+  transition: transform .8s var(--ease-out);
+  container-type: inline-size; /* ekran yazısı laptop genişliğiyle orantılı büyüsün */
+}
+@media (hover: hover) { .laptop:hover .laptop__lid { --rx: 2deg; --ry: -2deg; } }
+.laptop__screen {
+  display: flex; flex-direction: column; overflow: hidden; aspect-ratio: 16 / 10; /* gerçek laptop ekranı oranı */
+  border-radius: 12px; background: #0d1117; color: #c9d1d9;
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace; line-height: 1.6;
+  font-size: 11px; font-size: max(1.6cqw, 7.5px);
+}
+.laptop__base {
+  position: relative; width: min(860px, 113%); height: clamp(12px, 1.8vw, 18px); margin-top: -2px;
+  background: linear-gradient(#e2e4e8, #a9aeb6); border-radius: 0 0 22px 22px / 0 0 14px 14px;
+  box-shadow: 0 18px 30px -12px rgba(15, 15, 20, .35);
+}
+.laptop__notch { position: absolute; left: 50%; top: 0; translate: -50% 0; width: 16%; height: 45%; background: var(--steel-3); border-radius: 0 0 10px 10px; opacity: .5; }
+
+.code__bar { flex-shrink: 0; display: flex; align-items: center; gap: 1em; padding: .6em 1em; background: #161b22; border-bottom: 1px solid #21262d; }
+.code__dots { display: flex; gap: .5em; }
+.code__dots i { width: .85em; height: .85em; border-radius: 50%; background: #ff5f57; }
+.code__dots i:nth-child(2) { background: #febc2e; }
+.code__dots i:nth-child(3) { background: #28c840; }
+.code__file { color: #8b949e; }
+.code__run {
+  margin-left: auto; padding: .4em 1em; border: 0; border-radius: .5em; cursor: pointer;
+  font: inherit; font-weight: 600; color: #fff; background: #238636; transition: background .2s, transform .2s;
+}
+.code__run:hover { background: #2ea043; }
+.code__run:active { transform: scale(.96); }
+.code__run:disabled { opacity: .6; cursor: default; }
+
+.code__editor {
+  position: relative; flex: 1; min-height: 0; display: grid; align-content: start; margin: 0; padding: 1em 1.2em;
+  overflow: hidden; white-space: pre; font: inherit; font-size: .8em; line-height: 1.45;
+}
+.code__editor > code { grid-area: 1 / 1; font: inherit; background: none; padding: 0; border-radius: 0; }
+.code__ghost { visibility: hidden; }
+.code__caret { display: inline-block; width: .55em; height: 1.1em; vertical-align: text-bottom; background: #58a6ff; animation: caret 1s steps(1) infinite; }
+@keyframes caret { 50% { opacity: 0; } }
+.tok-kw { color: #ff7b72; }
+.tok-type { color: #79c0ff; }
+.tok-str { color: #a5d6ff; }
+.tok-num { color: #79c0ff; }
+.tok-fn { color: #d2a8ff; }
+.tok-com { color: #8b949e; font-style: italic; }
+
+.code__term { flex-shrink: 0; min-height: calc(3 * 1.6em + 1.6em); padding: .8em 1.2em; background: #010409; border-top: 1px solid #21262d; cursor: pointer; }
+.code__term .p { color: #7ee787; }
+.code__hint { color: #6e7681; }
+@media (max-width: 860px) {
+  .laptop__lid { --rx: 4deg; --ry: 0deg; }
+  .laptop__base { width: 106%; }
+  .code__editor, .code__term { padding-inline: .9em; }
+}
+
 /* ---------- Yetkinlikler ---------- */
 .abilities { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .ability {
